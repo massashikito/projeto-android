@@ -1,0 +1,197 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Work+Sans:ital,wght@0,900;1,900&display=swap');
+
+
+@font-face {
+
+    font-family: 'Android';
+    src: url('../fontes/idroid.otf') format('opentype');
+    font-weight: normal;
+}
+
+:root{/*configuração global*/
+ --cor0:#c5ebd6; /*só coloco cor0 onde quero essa cor*/
+ --cor1:#83e1ad;/*vale pra todas essas*/
+ --cor2:#3ddc84;
+ --cor3:#2fa866;
+ --cor4:#1a5c37;
+ --cor5:#063d1e;
+
+ --fonte-padrao: Arial, Verdana, Helvetica, sans-serif;/*pras fontes mesmo esquema coloca só padrao destaque ou android*/
+ --fonte-destaque: 'Bebas Neue', cursive;
+ --fonte-android: 'Android' , cursive;
+}
+*{/* "*" significa que todos as minhas tags terão essa config*/
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: var(--cor0);/*sempre dentro de parenteses*/
+    font-family: var(--fonte-padrao);/*sempre dentro de parenteses*/
+}
+
+a.externo::after{/*tag para add comentarios depois do texto*/
+    content: '\00A0\1F517';/*inseriu o simbolo que foi pego no emojipedia depois do link*/
+}/*1F517 é o codigo do emoji \00A0 é o espaço*/
+header{/*cabeçalho*/
+    background-image:linear-gradient(to bottom, var(--cor3), var(--cor5));/*degrade de cima pra baixo da cor3 para cor5*/
+    min-height: 150px;
+    text-align: center;
+    padding-top: 40px;/*espaço pra cima do meu h1 (titulo)*/
+}
+header > p {
+    color: white;
+    font-family: var(--fonte-padrao);/*var criada la em cima*/
+    font-size: 1.2em;/*tamanho da fonte 1.2x almentada do padrão*/
+    max-width: 600px;/*max tamanho 600px*/
+    padding-right: 10px; /*pra não ficar colado na lateral direira*/
+    padding-left: 10px;/*pra não ficar colado na lateral esquerda*/
+    margin: auto;/*centralizar paragrafo em telas maiores*/
+    margin-bottom: 20px;/*espaço abaixo do paragrafo*/
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.301);/*sombra do texto*/
+}
+
+header > h1 {
+    color: white;
+    font-family: var(--fonte-destaque);
+    font-size: 3em;/*titulo 3x maior*/
+    font-weight: normal;
+    margin-bottom: 20px; /*margin abaixo do titulo*/
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.267);/*sombra do tirulo*/
+}
+nav{
+    background-color: var(--cor5);
+    padding: 10px;/*add um espaço 10px cima baixo direita esqueda*/
+    box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.192);/*sombra da caixa de menu*/
+}
+nav > a {
+    color: var(--cor1);
+    padding: 10px; /*espaço dos lados e em cima dos links*/
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight:  bold; /*em destaqaue (negrito)*/
+    transition-duration: .5s;/*tempo de transição entre as configs*/
+}
+
+nav > a:hover {
+background-color: var(--cor3);/*cor do fundo do menu clicado*/
+color: var(--cor5);/*cor da fonte do menu clicado*/
+}/* quando passar o mouse em cima dos links essa config será exibida*/
+
+main{
+    min-width: 300px;/*telas pequenas limita de diminuir*/
+    max-width: 1000px;/*não vai crecer mais que essa medida*/
+    margin: auto;/*centraliza o box em telas grandes*/
+    margin-bottom: 30px;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.425);
+    border-bottom-left-radius: 10px;/*arredonda borda baixo esquerdo*/
+    border-bottom-right-radius: 10px;/*arredonda borda baixo direito*/
+    
+}
+main h1 {
+    color: var(--cor5);/*cor da fonte*/
+    font-family: var(--fonte-android);/*modelo de fonte*/
+    font-weight: normal;/*sem negrito*/
+    font-size: 1.8em;/*tamanho da fonte*/
+}
+main h2{
+    font-family: var(--fonte-android);/*fonte*/
+    color: var(--cor4);/*cor da fonte*/
+    font-weight: normal;/*pode ser negrito*/
+    font-size: 1.3em;/*tamanho do titulo*/
+    background-image:linear-gradient(to right, var(--cor1), transparent);/*degrade para direita cor1 para transparente*/
+    text-indent: 8px;/*espaço na esquerda (paragrafo)*/
+}
+
+main p {
+    margin: 15px 0px;/*margem de cima e baixo 15px. margem esquerda e direita 0*/ 
+    text-align: justify; /*alinhamento do texto justificado na direita e esquerda*/
+    text-indent: 30px;/*recuo do inicio do paragrafo*/
+    font-size: 1em;/*tamanho da fonte*/
+    line-height: 2em;/*espaçamento entre as linhas linha*/
+}
+main strong{
+    color: var(--cor4);
+    font-weight: bold;
+}/*tudo que for strong (negrito) terá essas config*/
+
+main a{
+    text-decoration: none;/*sem decoração no texto*/
+    font-weight: bold; /*negrito*/
+    color: var(--cor5);/*cor da fonte*/
+    background-color:var(--cor1);/*cor do fundo*/
+    padding: 2px 6px ;/*espaço em cima baixo e direita esquerda*/
+}
+
+main a:hover {
+    text-decoration: underline;
+    color:var(--cor2) ;
+    background-color: var(--cor4);
+}
+
+main img{
+    width: 100%;/*imagem crecerá até 100% e nao mais*/
+}
+main img.pequena{/*pequena foi a classe criada pra alterar só essa img*/
+max-width: 350px;/*aumentará a img até no max 350px*/
+display: block;/*a tag img não é um bloco, a tag muda para bloco*/
+margin: auto;/*mater a imagem centralizada*/
+}
+div.video{/*tudo que for div da classe video vai herdar essas config*/
+    background-color: var(--cor5); 
+    margin: 0px -20px  30px -20px;/*margem configurada para colar no main as laterais*/
+    padding: 20px;
+    padding-bottom: 56.5%;/*configurar pra não aparecer faixas pretas nas laterais*/
+    position: relative;
+}
+div.video > iframe{/*realizar configurações no codigo que veio do youtube*/
+    position: absolute;
+    top: 5%;/*configura posição do video*/ 
+    left: 5%;/*configura posição do video*/
+    width: 90%;/*configuraposiçãoa do video*/
+    height: 90%;/*configura posição do video*/
+}
+
+ aside {
+     background-color: var(--cor1);/*cor do fundo*/
+     padding: 10px; /*espaço em todos os lados da box*/
+     border-radius: 10px;/*arredondamento dos cantos*/
+     box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.295);/*sombra da box*/
+    } /*config do conteudo periferico*/
+
+ aside > h3 {
+     background-color:var(--cor4);/*cor do fundo*/
+     color: white;/*cor da fonte*/
+     padding: 10px;/*espaço entre a fonte e a caixa*/
+     margin: -10px -10px 0px -10px;/*-10 pra crecer pra fora e ficar alinhada com a caixa aside*/
+     border-radius: 10px 10px 0px 0px;/*arredondar os cantos*/
+     
+ }
+ aside > ul{/*só configura ul que estiver dentro de aside*/
+     list-style-type: '\2714\00A0\00A0';/*2714 é o codigo que corresponde ao sinal de conferi. pegado da emojipedia. add "\" (barra invertida) mais o codigo, isso tudo add o sinal de conferi na lista. \00A0 add um espaço depois do simbolo*/
+     list-style-position: inside;/*coloca as bolinhas pro lado de dentro da box (outside é pra fora*/
+     columns: 2;/*divide a lista em 2 colunas, pode ser em 3 ou 4 ai vai*/
+ }
+
+footer{
+    background-color: var(--cor5); /*cor do fundo*/
+    color: white;/*cor da fonte*/
+    text-align: center;/*texto no centro*/
+    font-size: 0.8em;/*tamanho da fonte*/
+    padding: 5px;/*espaços de cima e de baixo e das laterais*/
+
+}
+
+footer a {
+    color: white;/*cor da fonte*/
+    font-weight: bolder;/*negrito*/
+    text-decoration: none;/*sem decoração*/
+}/*links que estiverem dentro do rodapé*/
+
+footer a:hover {
+    text-decoration: underline;/*sublinhado*/
+    color: var(--cor1);/*cor da fonte*/
+}/*quando passar o mouse por cima do link*/
