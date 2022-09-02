@@ -48,7 +48,7 @@ header > p {
     padding-right: 10px; /*pra não ficar colado na lateral direira*/
     padding-left: 10px;/*pra não ficar colado na lateral esquerda*/
     margin: auto;/*centralizar paragrafo em telas maiores*/
-    margin-bottom: 20px;/*espaço abaixo do paragrafo*/
+    padding-bottom: 50px;/*espaço abaixo do paragrafo*/
     text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.301);/*sombra do texto*/
 }
 
